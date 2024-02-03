@@ -1,0 +1,25 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int y;
+  cin>>y;
+  string s;
+  while(1){ //Infinite loop
+    y++;
+    s=to_string(y); //int to string.
+    set<char>st; //char type set.Because in string every digit is char.Here,set name is st.
+    for(int i=0;i<4;i++){
+      st.insert(s[i]); //Every char insert to the set.
+    }
+     if(st.size()==4){ //If set size is 4 then break.
+      break;
+     }
+     else{
+      y=stoi(s); // string to int.
+
+     }
+  }
+  cout<<s<<endl;
+  return 0;
+}
