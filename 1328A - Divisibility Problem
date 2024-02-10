@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int a,b,t;
+    cin>>t;
+    int count;
+    while(t--){
+        cin>>a>>b;
+        if(a%b==0){
+             cout<<0<<endl;
+        }
+        else{
+            count=a%b;
+            cout<<b-count<<endl;//say a=10,b=4,count=(a%b)=2. Now,(b-count)=output.
+        }
+    }
+    
+    return 0;
+}
