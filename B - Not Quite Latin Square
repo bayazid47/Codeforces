@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int num=3;
+        while(num--){
+            char a,b,c,ret='A' ^ 'B' ^ 'C',temp;
+            cin>>a>>b>>c;
+            if(a =='?' || b =='?' || c =='?'){
+                temp=a^b^c^'?';
+                ret ^=temp;
+                cout<<ret<<endl;
+            }
+        }
+    }
+    return 0;
+}
