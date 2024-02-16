@@ -1,0 +1,27 @@
+#include<stdio.h>
+
+long long next_bet(long long cur_loss, long long k){
+  return (cur_loss+k-1)/(k-1);
+}
+
+int main(){
+  int t;
+  scanf("%d",&t);
+
+  while(t--){
+    long long k,x,a;
+    scanf("%lld%lld%lld",&k,&x,&a);
+
+
+    long long u=0;
+    int ok=1;
+    for(int i=0;ok&&i<x;i++){
+      long long v=next_bet(u,k);
+      u+=(v==0)?1:v;
+      ok=u<=a;
+
+    }
+    printf("%s\n",(k*(a-u)>a)?"YES":"NO");
+  }
+  return 0;
+}
