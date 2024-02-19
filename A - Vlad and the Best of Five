@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+
+    while (t--) {
+        string str;
+        cin >> str;
+
+        int count_A = 0, count_B= 0;
+
+        for (char c : str) {
+            if (c == 'A') {
+                count_A++;
+            } else if (c == 'B') {
+                count_B++;
+            
+        }
+        }
+
+        char max = count_A > count_B ? 'A' : 'B';
+        cout << max << endl;
+    }
+
+    return 0;
+}
