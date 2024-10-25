@@ -1,0 +1,45 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+
+    int t;
+    cin >> t;
+
+    while (t--) {
+        int n;
+        cin >> n;
+
+        vector<vector<int>> matrix(n, vector<int>(n));
+
+       
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                cin >> matrix[i][j];
+            }
+        }
+
+        vector<int> minD(2 * n - 1, INT_MAX);
+
+        
+        for (int i = 0; i < n; ++i) {
+            for (int j = 0; j < n; ++j) {
+                int diagIn = i - j + (n - 1); 
+                minD[diagIn] = min(minD[diagIn], matrix[i][j]); 
+            }
+        }
+
+        int total = 0; 
+
+        for (int value : minD) {
+            if (value < 0) {
+                total -= value;
+            }
+        }
+        cout << total << endl;
+    }
+
+    return 0;
+}
